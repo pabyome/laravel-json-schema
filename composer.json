@@ -1,0 +1,53 @@
+{
+    "name": "paulaba/laravel-json-schema",
+    "description": "A Laravel package for generating JSON schemas from classes and validating data. (Use case for creating and validating structured outputs from LLMs)",
+    "keywords": ["laravel", "json", "schema", "validation", "validator"],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul A.",
+            "email": "pabyome@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/support": "^9.0|^10.0|^11.0",
+        "illuminate/validation": "^9.0|^10.0|^11.0"
+    },
+    "require-dev": {
+        "laravel/pint": "^1.20",
+        "orchestra/testbench": "^7.0|^8.0|^9.0",
+        "pestphp/pest": "^2.0",
+        "pestphp/pest-plugin-laravel": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "paulaba\\LaravelJsonSchema\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "paulaba\\LaravelJsonSchema\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "paulaba\\LaravelJsonSchema\\JsonSchemaServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage"
+    }
+}
